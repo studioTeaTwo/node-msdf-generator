@@ -1,0 +1,27 @@
+{
+  "name": "node-msdf-generator",
+  "version": "0.0.1",
+  "description": "msdf generator in node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studioTeaTwo/node-msdf-generator.git"
+  },
+  "keywords": [
+    "msdf",
+    "aframe",
+    "font"
+  ],
+  "author": "teatwo <studioTeaTwo@gmail.com> (https://studioteatwo.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/studioTeaTwo/node-msdf-generator/issues"
+  },
+  "homepage": "https://github.com/studioTeaTwo/node-msdf-generator#readme",
+  "dependencies": {
+    "msdf-bmfont-xml": "^2.5.4"
+  }
+}
