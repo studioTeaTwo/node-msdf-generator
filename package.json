@@ -1,6 +1,6 @@
 {
   "name": "msdf-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "msdf generator in node.js",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -8,13 +8,14 @@
     "lib"
   ],
   "scripts": {
+    "build": "npm run rollup:build",
     "rollup:build": "rollup -c",
     "rollup:watch": "npm run rollup:build -- -w",
     "lint": "eslint ./src/**",
     "lint:fix": "npm run lint -- --fix",
-    "test": "echo empty tests",
-    "example": "node --experimental-modules example/index.mjs",
-    "build": "npm run rollup:build"
+    "test": "can-npm-publish --verbose",
+    "example": "node --experimental-modules example/main.mjs",
+    "prepare": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "can-npm-publish": "^1.3.2",
     "eslint": "^6.8.0",
     "rollup": "^2.3.4"
   }

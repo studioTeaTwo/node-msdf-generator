@@ -19,7 +19,7 @@ const DEFAULT_CHARSET = `${CHARSET_ALPHABET}${CHARSET_HIRAGANA}${CHARSET_KATAKAN
  * @param {Object} option.output 引数
  */
 export async function msdfGenerator(option) {
-  const dirname = path.dirname(new URL(import.meta.url).pathname);
+  const cwd = process.cwd();
 
   const fontID = (option && option.fontID) ? option.fontID : DEFAULT_FONTID;
   const charset = (option && option.charset) ? option.charset : DEFAULT_CHARSET;
@@ -28,10 +28,10 @@ export async function msdfGenerator(option) {
   const output = (option && option.output) ? option.output : DEFAULT_FONT_PATH;
 
   try {
-    const fontFile = fs.readFileSync(path.join(dirname, ttfFilePath))
+    const fontFile = fs.readFileSync(path.join(cwd, ttfFilePath))
     const result = await createJsonAndTexture(fontID, fontFile, charset, textureSize);
-    fs.writeFileSync(path.join(dirname, `${output}/${fontID}-msdf.json`), JSON.stringify(result.json));
-    fs.writeFileSync(path.join(dirname, `${output}/${fontID}-msdf.png`), result.textures[0].texture);
+    fs.writeFileSync(path.join(cwd, `${output}/${fontID}-msdf.json`), JSON.stringify(result.json));
+    fs.writeFileSync(path.join(cwd, `${output}/${fontID}-msdf.png`), result.textures[0].texture);
     console.log('ok', result.textures);
   } catch (e) {
     console.error(e);
