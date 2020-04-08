@@ -1,10 +1,20 @@
 {
-  "name": "node-msdf-generator",
+  "name": "msdf-generator",
   "version": "0.0.1",
   "description": "msdf generator in node.js",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rollup:build": "rollup -c",
+    "rollup:watch": "npm run rollup:build -- -w",
+    "lint": "eslint ./src/**",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo empty tests",
+    "example": "node --experimental-modules example/index.mjs",
+    "build": "npm run rollup:build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +32,13 @@
   },
   "homepage": "https://github.com/studioTeaTwo/node-msdf-generator#readme",
   "dependencies": {
+    "minimist": "^1.2.5",
     "msdf-bmfont-xml": "^2.5.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "eslint": "^6.8.0",
+    "rollup": "^2.3.4"
   }
 }
