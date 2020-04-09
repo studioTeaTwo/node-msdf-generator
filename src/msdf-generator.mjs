@@ -28,8 +28,9 @@ export async function msdfGenerator(option) {
   const output = (option && option.output) ? option.output : DEFAULT_FONT_PATH;
 
   try {
-    const fontFile = fs.readFileSync(path.join(cwd, ttfFilePath))
+    const fontFile = fs.readFileSync(path.join(cwd, ttfFilePath));
     const result = await createJsonAndTexture(fontID, fontFile, charset, textureSize);
+    fs.mkdirSync(path.join(cwd, output), {recursive: true});
     fs.writeFileSync(path.join(cwd, `${output}/${fontID}-msdf.json`), JSON.stringify(result.json));
     fs.writeFileSync(path.join(cwd, `${output}/${fontID}-msdf.png`), result.textures[0].texture);
     console.log('ok', result.textures);
