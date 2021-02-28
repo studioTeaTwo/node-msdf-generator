@@ -7,3 +7,11 @@
 Install with [npm](https://www.npmjs.com/):
 
     npm install --save-dev msdf-generator
+
+
+## Publish
+
+Increment the version in package.json. And then:
+    npm run build
+    npm run prepare
+    npm publish
