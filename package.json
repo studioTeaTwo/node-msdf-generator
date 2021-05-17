@@ -1,6 +1,6 @@
 {
   "name": "msdf-generator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "msdf generator in node.js",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -43,6 +43,7 @@
     "eslint": "^7.21.0",
     "fs-extra": "^9.1.0",
     "mocha": "^8.3.0",
-    "rollup": "^2.40.0"
+    "rollup": "^2.40.0",
+    "standard-version": "^9.3.0"
   }
 }
