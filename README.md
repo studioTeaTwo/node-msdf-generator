@@ -17,5 +17,5 @@ And then:
     npm run build
     npm run prepare
     npm run release -- --release-as [version]
-    git push --follow-tags origin master
+    git push --follow-tags origin main
     npm publish
