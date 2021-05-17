@@ -1,6 +1,6 @@
 {
   "name": "msdf-generator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "msdf generator in node.js",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

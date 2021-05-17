@@ -16,6 +16,6 @@ And then:
 
     npm run build
     npm run prepare
-    git tag -a v[current version] -m 'version [current version]'
-    git push origin v[current version]
+    npm run release -- --release-as [version]
+    git push --follow-tags origin master
     npm publish
