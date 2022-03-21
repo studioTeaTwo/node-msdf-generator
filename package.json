@@ -15,7 +15,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run build && mocha",
     "example": "node --experimental-modules example/main.mjs",
-    "prepare": "npm run test && can-npm-publish --verbose",
+    "prepublishOnly": "npm run test && can-npm-publish --verbose",
     "release": "standard-version"
   },
   "repository": {
