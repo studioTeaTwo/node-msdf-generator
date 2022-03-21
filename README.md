@@ -11,10 +11,12 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Publish
 
-Update the source.
-Increment the version in package.json and commit it.
-And then:
+- Update the source.
+- Increment the `version` in package.json.(not to commit) 
+- And then:
 
-    npm run release -- --release-as [version]
-    git push --follow-tags origin main
-    npm publish
+```sh
+  npm run release -- --release-as [version]
+  git push --follow-tags origin main
+  npm publish
+```
